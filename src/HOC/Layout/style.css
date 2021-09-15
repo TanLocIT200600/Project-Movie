@@ -1,0 +1,35 @@
+.template{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.body{
+    margin-top: 0;
+}
+/* Footer */
+.footer{
+    background-color: #222222;
+    color: white;
+    padding-top:2rem;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #aaa7a7;
+}
+.row{
+    display: flex;
+    margin: 2rem 0;
+}
+h4.ant-typography, .ant-typography h4 {
+    color: white !important;
+}
+.tix-col,.logo-col,.mobile-col,.social-col{
+    display: flex;
+    flex-direction: row;
+}
+.footer p {
+    margin-left: 10%;
+    padding: 1rem 0;
+}

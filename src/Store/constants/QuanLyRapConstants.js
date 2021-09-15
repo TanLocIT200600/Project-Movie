@@ -1,0 +1,3 @@
+
+export const SET_FILM_DETAILS = 'SET_FILM_DETAILS'
+export const SET_INFO_CINEMA = 'SET_INFO_CINEMA'
