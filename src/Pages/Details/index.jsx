@@ -4,20 +4,21 @@ import { useParams } from "react-router-dom";
 import { Modal, Rate } from "antd";
 import Layout from "../../HOC/Layout/index.jsx";
 import { Col, Typography, Tag, Tabs } from 'antd';
+import { FetchMovieDetailsAction } from "../../Store/actions/QuanLyRapActions";
 import moment from 'moment';
 import './style.css';
 import { CustomCard } from '@tsamantanis/react-glassmorphism'
 import { PlayCircleOutlined } from '@ant-design/icons'
 import { NavLink } from 'react-router-dom'
-import { FetchMovieDetailsAction } from "../../Store/actions/QuanLyRapActions";
+const { TabPane } = Tabs;
+const { Title } = Typography;
 
 export default function Detail() {
-  const { Title } = Typography;
-  const { TabPane } = Tabs;
   const [state, setState] = useState(false);
   const params = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
+    window.scrollTo(0,0)
     dispatch(FetchMovieDetailsAction(params.id))
   }, [dispatch]);
   const filmDetail = useSelector((state) => state.quanLyRapReducers.movieDetail);
@@ -42,7 +43,8 @@ export default function Detail() {
       >
         <div className="row-detail">
           <Col className="img_detail" span={4}>
-            <img src={filmDetail.hinhAnh} alt={filmDetail.tenPhim} style={{ height: 300, width: "100%" }} />
+            <span className="title-maPhim">{filmDetail.maPhim}</span>
+            <img src={filmDetail.hinhAnh} alt={filmDetail.tenPhim} style={{ height: 300, width: "100%", position:'relative' }} />
             <div className="movie__detail"></div>
             <div className="movie_trailer">
               <button onClick={showModal}><PlayCircleOutlined className="play-video" /></button>
@@ -54,10 +56,7 @@ export default function Detail() {
           </Col>
           <Col span={12} className="detail-film">
             <Title className="ngayKhoiChieu" level={5}>{moment(filmDetail.ngayKhoiChieu).format('DD-MM-YYYY')}</Title>
-            <div className="row">
-              <Tag color="#f50">{filmDetail.maPhim}</Tag>
-              <Title level={3} className="tenPhim-detail">{filmDetail.tenPhim}</Title>
-            </div>
+            <Title level={3} className="tenPhim-detail">{filmDetail.tenPhim}</Title>
             <p>Nội dung: {filmDetail.moTa}</p>
           </Col>
           <Col span={8}>
@@ -68,11 +67,12 @@ export default function Detail() {
                 <div className="fill" />
               </div>
             </div>
+            <br/>
             <div className="star-rating"><Rate allowHalf value={filmDetail.danhGia / 2} /></div>
           </Col>
         </div>
 
-          <Title>Lịch chiếu</Title>
+          <Title style={{color: '#d65306'}}>Lịch chiếu</Title>
             <div className="lichChieu">
             <Tabs tabPosition={'left'}>
               {filmDetail ? filmDetail.heThongRapChieu?.map((heThongRapChieu, index) => {
@@ -89,9 +89,16 @@ export default function Detail() {
                             <p>{cumRapChieu.diaChi}</p>
                             <div className="grid grid-cols-4">
                               {cumRapChieu.lichChieuPhim?.slice(0, 10).map((lichChieuPhim, index) => {
-                                return <NavLink to='/' className="col-span-1 gioChieu" key={index}>
-                                  {moment(lichChieuPhim.ngayChieuGioChieu).format('hh:mm A')}
-                                </NavLink>
+                                return (
+                                  <NavLink
+                                    to={`/booking/${lichChieuPhim.maLichChieu}`}
+                                    className="col-span-1 gioChieu"
+                                    key={index}>
+                                    {moment(
+                                      lichChieuPhim.ngayChieuGioChieu
+                                    ).format("hh:mm A")}
+                                  </NavLink>
+                                );
                               })}
                             </div>
                           </div>

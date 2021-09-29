@@ -1,0 +1,9 @@
+.tabNews{
+    box-shadow: none !important;
+}
+.tabNews .ant-tabs-nav-wrap {
+    margin-left: 32%;
+}
+.tabItems{
+    font-size: 20px;
+}

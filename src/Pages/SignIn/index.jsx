@@ -7,7 +7,7 @@ import { UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import logoSignIn from "../../assets/logoSignIn.png";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { SignInAction } from "../../Store/actions/userActions";
+import { FetchInfoUser, SignInAction } from "../../Store/actions/userActions";
 
 const { Text } = Typography;
 
@@ -31,8 +31,8 @@ function SignIn(props) {
   });
 
   const goToHome = () => {
-    props.history.push('/')
-  }
+    props.history.goBack();
+  };
 
   // set tất cả các input là touched khi submit
   const setAllTouched = useCallback(() => {
@@ -40,7 +40,6 @@ function SignIn(props) {
       formik.setFieldTouched(key);
     });
   }, [formik]);
-  
 
   const handleSubmit = useCallback(
     (e) => {
@@ -57,7 +56,6 @@ function SignIn(props) {
       <form
         className="signIn-form sm:container rounded-lg"
         onSubmit={handleSubmit}>
-        
         <NavLink to="/">
           <img className="logoLogin" src={logoSignIn} alt="logo" />
         </NavLink>
@@ -65,7 +63,7 @@ function SignIn(props) {
           <CloseOutlined />
         </NavLink>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Username:
           </Text>
           <Input
@@ -81,7 +79,7 @@ function SignIn(props) {
           )}
         </div>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Password:
           </Text>
           <Input.Password

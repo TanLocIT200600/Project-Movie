@@ -4,7 +4,17 @@
   margin-top: 10%;
   display: flex;
 }
-
+.title-maPhim{
+  background-color: #ff520099;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 1;
+    border-radius: 30px;
+}
 .img_detail {
   position: relative;
   overflow: hidden;
@@ -64,16 +74,12 @@
 }
 
 .detail-film {
-  margin: 4rem 2rem 1rem 1rem;
+  margin: 1rem 2rem 1rem 1rem;
 }
 .ngayKhoiChieu,.tenPhim-detail{
   color: white !important;
 }
 
-.row {
-  display: flex;
-  margin: 0;
-}
 
 .ant-tag-has-color {
   padding: 0.5rem !important;
@@ -87,7 +93,9 @@ p {
 }
 
 .star-rating {
-  margin-left: 3.3rem;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
 }
 
 .lichChieu {
@@ -392,6 +400,7 @@ p {
 .c100.center {
   float: none;
   margin: 0 auto;
+  position: relative;
 }
 
 .c100.big {

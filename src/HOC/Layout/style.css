@@ -11,9 +11,8 @@
 .footer{
     background-color: #222222;
     color: white;
-    padding-top:2rem;
 }
-.container{
+.containerLayout{
     width: 80%;
     margin: 0 auto;
     border-bottom: 1px solid #aaa7a7;
@@ -23,7 +22,7 @@
     margin: 2rem 0;
 }
 h4.ant-typography, .ant-typography h4 {
-    color: white !important;
+    color: #ddd7d7 !important;
 }
 .tix-col,.logo-col,.mobile-col,.social-col{
     display: flex;

@@ -17,3 +17,9 @@
     display: inline-flex;
     align-items: center;
 }
+.ant-tooltip-placement-bottom {
+    padding-top: 0 !important;
+}
+.ant-tooltip-inner{
+    background-color: gray !important;
+}

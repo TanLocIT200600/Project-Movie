@@ -1,0 +1,23 @@
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    color: #fb4226 !important;
+}
+
+.ant-tabs-ink-bar{
+    background: #fb4226 !important;
+}
+.ant-tabs-tab:hover {
+    color: #fb4226 !important;
+}
+a:hover{
+    color: #fb4226 !important;
+}
+.ant-tabs-nav-list{
+    margin-left: 9% !important;
+}
+
+.ant-tabs-nav{
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+}
+.ant-tabs-top > .ant-tabs-nav {
+    margin: 0 !important;
+}

@@ -47,9 +47,9 @@ function SignUp(props) {
     validationSchema,
     validateOnMount: true,
   });
-   const goToHome = () => {
-     props.history.push("/");
-   };
+  const goToHome = () => {
+    props.history.push("/");
+  };
 
   // set tất cả các input là touched khi submit
   // để khi người dùng chưa nhập gì mà submit
@@ -80,7 +80,7 @@ function SignUp(props) {
           <CloseOutlined />
         </NavLink>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             FullName:
           </Text>
           <Input
@@ -96,7 +96,7 @@ function SignUp(props) {
           )}
         </div>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Username:
           </Text>
           <Input
@@ -112,7 +112,7 @@ function SignUp(props) {
           )}
         </div>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Password:
           </Text>
           <Input.Password
@@ -128,7 +128,7 @@ function SignUp(props) {
           )}
         </div>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Email:
           </Text>
           <Input
@@ -144,7 +144,7 @@ function SignUp(props) {
           )}
         </div>
         <div className="mb-2">
-          <Text className="text-white" strong>
+          <Text className="text-gray-500" strong>
             Phone:
           </Text>
           <Input

@@ -10,3 +10,7 @@
 .dsPhim{
     margin-left: 15px;
 }
+.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    padding: 5px 5px;
+    text-align: center;
+}

@@ -6,18 +6,18 @@ import {
 } from "../constants/movieConstants";
 
 const stateDefault = {
-  bannerList:[],
+  bannerList: [],
   arrFilm: [],
   arrFilmDefault: [],
   dangChieu: true,
-  sapChieu:true,
+  sapChieu: true,
 };
 
 export const movieReducers = (state = stateDefault, { type, payload }) => {
   switch (type) {
     case SET_BANNER_LIST:
       state.bannerList = payload;
-      return {...state};
+      return { ...state };
 
     case SET_MOVIES_LIST:
       state.arrFilm = payload;
@@ -26,13 +26,13 @@ export const movieReducers = (state = stateDefault, { type, payload }) => {
 
     case SET_FILM_DANG_CHIEU:
       state.dangChieu = !state.dangChieu;
-      state.arrFilm =state.arrFilmDefault.filter(film => film.dangChieu === state.dangChieu);
+      state.arrFilm = state.arrFilmDefault.filter(film => film.dangChieu === state.dangChieu);
       return { ...state };
-    
-      case SET_FILM_SAP_CHIEU:
-        state.sapChieu = !state.sapChieu;
-        state.arrFilm =state.arrFilmDefault.filter(film => film.sapChieu === state.sapChieu);
-        return { ...state };
+
+    case SET_FILM_SAP_CHIEU:
+      state.sapChieu = !state.sapChieu;
+      state.arrFilm = state.arrFilmDefault.filter(film => film.sapChieu === state.sapChieu);
+      return { ...state };
 
     default:
       return state;
